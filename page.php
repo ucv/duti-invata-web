@@ -8,8 +8,7 @@
 
 include "config/template.php";
 
-$siteName = $config['siteName'] . ' - Prima pagina';
+$siteName = $config['siteName'] . ' - Pagina';
 
 include "template/base.php";
 ?>
-
