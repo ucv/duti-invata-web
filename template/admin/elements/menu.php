@@ -20,10 +20,8 @@ $_menu = [
     [
         'link' => '/admin/menu/',
         'text' => 'Menu Items',
-
     ],
 ];
-
 
 $result = $conn->query("SELECT * FROM admin_menu");
 $menu = $result->fetch_all(MYSQLI_ASSOC);
