@@ -10,6 +10,14 @@ include "config/template.php";
 
 $siteName = $config['siteName'] . ' - Prima pagina';
 
-include "template/base.php";
+include 'template/base_top.php';
+
+include 'template/default/header.php';
+include 'template/default/homepage.php';
+include "template/default/footer.php";
+
+include "template/base_bottom.php";
+
+
 ?>
 
