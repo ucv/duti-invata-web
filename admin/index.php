@@ -17,6 +17,7 @@ $siteName = $config['siteName'] . ' - ' . $title . '';
 include '../template/base_admin_top.php';
 
 include "../template/admin/header.php";
+
 include "../template/admin/dashboard.php";
 
 include "../template/base_admin_bottom.php";

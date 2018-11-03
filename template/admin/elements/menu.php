@@ -23,7 +23,7 @@ $_menu = [
     ],
 ];
 
-$result = $conn->query("SELECT * FROM admin_menu");
+$result = $DB->query("SELECT * FROM admin_menu");
 $menu = $result->fetch_all(MYSQLI_ASSOC);
 
 $_activeMenu = '';

@@ -22,6 +22,5 @@ include "../../template/admin/posts.php";
 
 include "../../template/base_admin_bottom.php";
 
-
 ?>
 
