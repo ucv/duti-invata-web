@@ -2,5 +2,5 @@
 
 ```
 $wsl
-$./webserver
+$./web-server.sh
 ```
