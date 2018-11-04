@@ -83,7 +83,6 @@ if(isset($_GET['save']) && $_GET['save'] == true){
 
                 <button type="submit" class="btn btn-success float-right" name="save" value="true">Save</button>
             </form>
-
         </main>
     </div>
 </div>
