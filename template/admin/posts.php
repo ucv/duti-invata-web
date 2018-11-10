@@ -72,17 +72,22 @@ if (isset($_GET['save']) && $_GET['save'] == true) {
                         </tr>
                         </thead>
                         <tbody>
+                            <?php
 
-                        <tr>
-                            <td><?=$menuItems['title']?></td>
-                            <td><?=$menuItems['content']?></td>
-                            <td><?=$menuItems['author']?></td>
+                            foreach ($menuItems as $menuItem){
+                            ?>
+                            <tr>
+                            <td><?=$menuItem['title']?></td>
+                            <td><?=$menuItem['content']?></td>
+                            <td><?=$menuItem['author']?></td>
                             <td>
                                 <a href="edit.php?id=" class="btn btn-danger">Edit</a>
                                 <a href="?remove_id=" class="btn btn-dark">Sterge <i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
-
+                            <?php
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
