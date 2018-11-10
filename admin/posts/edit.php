@@ -8,7 +8,7 @@
 include "../../src/database.php";
 include "../../config/template.php";
 
-$title = 'Menu Items - Edit';
+$title = 'Post - Edit';
 
 $activeMenu = $title;
 $siteName = $config['siteName'] . ' - '.$title;
@@ -17,10 +17,10 @@ include '../../template/base_admin_top.php';
 
 include "../../template/admin/header.php";
 
-$result = $DB->query("SELECT * FROM admin_menu");
+$result = $DB->query("SELECT * FROM post");
 $menuItems = $result->fetch_all(MYSQLI_ASSOC);
 
-include "../../template/admin/posts/edit.php";
+//include "../../template/admin/menu_items_edit.php";
 
 include "../../template/base_admin_bottom.php";
 
