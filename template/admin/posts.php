@@ -37,6 +37,7 @@ if (isset($_GET['save']) && $_GET['save'] == true) {
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <div class="container">
+
                     <?php
                     if(isset($postSaved) && $postSaved){
                         ?>
@@ -60,6 +61,30 @@ if (isset($_GET['save']) && $_GET['save'] == true) {
                         </div>
                         <button type="submit" class="btn btn-success float-right" name="save" value="true">Save</button>
                     </form>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>title</th>
+                            <th>content</th>
+                            <th>author</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td><?=$menuItems['title']?></td>
+                            <td><?=$menuItems['content']?></td>
+                            <td><?=$menuItems['author']?></td>
+                            <td>
+                                <a href="edit.php?id=" class="btn btn-danger">Edit</a>
+                                <a href="?remove_id=" class="btn btn-dark">Sterge <i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
