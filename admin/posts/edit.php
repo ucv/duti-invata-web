@@ -17,10 +17,10 @@ include '../../template/base_admin_top.php';
 
 include "../../template/admin/header.php";
 
-$result = $DB->query("SELECT * FROM post");
-$menuItems = $result->fetch_all(MYSQLI_ASSOC);
+$result = $DB->query("SELECT * FROM admin_menu");
+$postItems = $result->fetch_all(MYSQLI_ASSOC);
 
-//include "../../template/admin/menu_items_edit.php";
+include "../../template/admin/post_item_edit.php";
 
 include "../../template/base_admin_bottom.php";
 

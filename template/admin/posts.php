@@ -6,7 +6,7 @@
  * Time: 18:58
  */
 $result = $DB->query("SELECT * FROM post");
-$menuItems = $result->fetch_all(MYSQLI_ASSOC);
+$_postItems = $result->fetch_all(MYSQLI_ASSOC);
 
 if (isset($_GET['save']) && $_GET['save'] == true) {
     if (isset($_GET['title']) && isset($_GET['content']) && isset($_GET['author'])) {
@@ -74,15 +74,16 @@ if (isset($_GET['save']) && $_GET['save'] == true) {
                         <tbody>
                             <?php
 
-                            foreach ($menuItems as $menuItem){
+                            foreach ($_postItems as $postItem){
                             ?>
                             <tr>
-                            <td><?=$menuItem['title']?></td>
-                            <td><?=$menuItem['content']?></td>
-                            <td><?=$menuItem['author']?></td>
+                            <td><?=$postItem['id']?></td>
+                            <td><?=$postItem['title']?></td>
+                            <td><?=$postItem['content']?></td>
+                            <td><?=$postItem['author']?></td>
                             <td>
-                                <a href="edit.php?id=" class="btn btn-danger">Edit</a>
-                                <a href="?remove_id=" class="btn btn-dark">Sterge <i class="fas fa-trash-alt"></i></a>
+                                <a href="edit.php?id=<?=$postItem['id']?>" class="btn btn-danger">Edit</a>
+                                <a href="?remove_id=<?=$postItem['id']?>" class="btn btn-dark">Sterge <i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                             <?php
