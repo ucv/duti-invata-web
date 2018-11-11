@@ -5,6 +5,11 @@
  * Date: 28-Oct-18
  * Time: 18:58
  */
+if(isset($_GET['remove_id']) && is_numeric($_GET['remove_id'])){
+    $sql = "DELETE FROM post WHERE id = ".$_GET['remove_id'];
+    $result = $DB->query($sql);
+}
+
 $result = $DB->query("SELECT * FROM post");
 $_postItems = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -83,6 +88,7 @@ if (isset($_GET['save']) && $_GET['save'] == true) {
                             <td><?=$postItem['author']?></td>
                             <td>
                                 <a href="edit.php?id=<?=$postItem['id']?>" class="btn btn-danger">Edit</a>
+
                                 <a href="?remove_id=<?=$postItem['id']?>" class="btn btn-dark">Sterge <i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
