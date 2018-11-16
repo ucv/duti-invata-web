@@ -74,6 +74,7 @@ if (isset($_GET['save']) && $_GET['save'] == true) {
                             <th>title</th>
                             <th>content</th>
                             <th>author</th>
+                            <th>action</th>
                         </tr>
                         </thead>
                         <tbody>

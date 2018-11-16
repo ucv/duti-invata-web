@@ -25,6 +25,11 @@ if(isset($_GET['id']) && $_GET['id'] != ''){
         $sql = "SELECT * FROM post WHERE id = $id";
         $result = $DB->query($sql);
         $_postItem = $result->fetch_assoc();
+
+        $sql = "SELECT * FROM comment WHERE post_id = $id";
+        $result = $DB->query($sql);
+        $_commentItems = $result->fetch_all(MYSQLI_ASSOC);
+
     }
 
 }
@@ -70,6 +75,42 @@ if(isset($_GET['id']) && $_GET['id'] != ''){
 
                 <button type="submit" class="btn btn-primary float-right" name="edit" value="true">Save</button>
             </form>
+
+            <br>
+            <br>
+            <br>
+
+
+            <hr>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>author</th>
+                    <th>comment</th>
+                    <th>action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php
+                foreach ($_commentItems as $_commentItem){
+                    ?>
+                    <tr>
+                        <td>#<?=$_commentItem['id_comment'] ?></td>
+                        <td><?=$_commentItem['author'] ?></td>
+                        <td><?=$_commentItem['comment'] ?></td>
+                        <td></td>
+                    </tr>
+
+                    <?php
+                }
+                ?>
+
+                </tbody>
+            </table>
+
 
 
         </main>
