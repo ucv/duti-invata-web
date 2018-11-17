@@ -6,6 +6,8 @@
  * Time: 11:12
  */
 
+
+include "src/database.php";
 include "config/template.php";
 
 $siteName = $config['siteName'] . ' - Prima pagina';
